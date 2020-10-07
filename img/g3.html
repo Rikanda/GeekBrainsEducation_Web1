@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="web, android, ios, windows, photoshop, xd, sketch, xcode, android, studio, development, code, generator">
+  <meta name="description" content="Make pixel perfect apps. Simply.">
+  <meta name="csrf-token" content="2FU5EQbA-ocSY-24qz_iORIYvWkhvvOaYlYM">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="https://cdn.sympli.io/static/cd638cfc830ca1c9de55ea72153a2b58d1612781/img/favicon.ico" type="image/x-icon">
+  <title>Login - Sympli.io</title>
+  <link rel="stylesheet" href="https://cdn.sympli.io/static/cd638cfc830ca1c9de55ea72153a2b58d1612781/build/build-static.css"/>
+  <link rel="stylesheet" href="https://cdn.sympli.io/static/cd638cfc830ca1c9de55ea72153a2b58d1612781/build/build.css"/>
+</head>
+<body class="login-pages">
+  <div class="layout-login">
+    <div class="layout-login__block">
+      
+<div class="layout-login__header">
+  <div class="brand">
+    <span class="navbar-brand-block">
+      <span class="navbar-brand__animation">
+        <span class="square"></span>
+        <span class="line line-right"></span>
+        <span class="line line-bottom"></span>
+        <span class="line line-left"></span>
+        <span class="line line-top"></span>
+      </span>
+    </span>
+      <span class="title">Sympli</span>
+  </div>
+  <div class="text">Collaboration tool for<br/> designers and developers</div>
+</div>
+
+
+
+
+
+
+  <div class="layout-login__form">
+    <form id="login-form" class="server-form" method="POST">
+      <input type="hidden" name="_csrf" value="2FU5EQbA-ocSY-24qz_iORIYvWkhvvOaYlYM"/>
+      <div class="layout-login__form-container">
+        <div class="layout-login__form-group">
+            <input type="email" name="email" id="email" placeholder="Email" autofocus="autofocus"
+                   class="layout-login-control" value=""/>
+        </div>
+        <div class="layout-login__form-group">
+          <input type="password" name="password" id="password" placeholder="Password" autocomplete="off"
+                 class="layout-login-control"/>
+        </div>
+      </div>
+      
+      
+      <div class="layout-login__form-button">
+        <!---->
+          <button type="submit" class="btn btn-primary" onclick="$(this).trigger('blur');">
+            <span class="text">Sign In</span>
+            <span class="sympli-icon icon-login_right"></span>
+          </button>
+        <!---->
+      </div>
+    </form>
+  </div>
+
+  <div class="layout-login__link login__link">
+    <a href="/forgot" class="back-link skip-validate">Forgot your password?</a>
+    <a href="/signup?origin=%2Fapp" class="back-link skip-validate">Don’t have an account?</a>
+  </div>
+
+
+
+
+    </div>
+  </div>
+
+  <script>
+    var intercomSettings = {
+      app_id: 'lilh3zkf',
+      
+      app: 'web'
+    }
+  </script>
+
+  <script src="https://cdn.sympli.io/static/cd638cfc830ca1c9de55ea72153a2b58d1612781/build/build-static.js"></script>
+  <script type="text/javascript">
+    //validation settings
+    var sympliValidation = {
+        timer: null,
+        timeout: 100,
+        exec: function () {
+          var sympli = {
+            formValidClass: 'success',
+            formDirtyClass: 'dirty',
+            formInvalidClass: 'faild'
+          };
+
+          var countsValid = $(this.currentForm).find('.sympli-valid').length;
+          var countRules = Object.keys(this.settings.rules).length;
+          if(this.numberOfInvalids() == countRules) { // all fields are invalid
+            $(this.currentForm).removeClass(sympli.formValidClass).removeClass(sympli.formDirtyClass).addClass(sympli.formInvalidClass);
+          } else if(this.numberOfInvalids() == 0 && countRules == countsValid) { // all fields are valid
+            $(this.currentForm).removeClass(sympli.formInvalidClass).removeClass(sympli.formDirtyClass).addClass(sympli.formValidClass);
+          } else {
+            $(this.currentForm).removeClass(sympli.formInvalidClass).removeClass(sympli.formValidClass).addClass(sympli.formDirtyClass);
+          }
+        }
+      };
+
+      $(document).on('click', function (e) {
+        if(sympliValidation.timer && $(e.target).hasClass('skip-validate')){
+          clearTimeout(sympliValidation.timer);
+          sympliValidation.timer = null;
+        }
+      });
+
+
+    //Animation for the logo
+    var isGoodTimeToAnimation = false;
+
+    $(document).on('animationEnd webkitAnimationEnd', function(e){
+      isGoodTimeToAnimation = e.originalEvent.animationName == "syro";
+    });
+
+    setTimeout(function () {
+      $('.navbar-brand__animation').hover(function () {
+        logoAnimation($('.navbar-brand-block'));
+      });
+    }, 2000);
+
+    function logoAnimation(rotation) {
+      var localRotation = rotation.clone();
+      rotation.remove();
+      isGoodTimeToAnimation = false;
+      $('.brand').prepend(localRotation).on("mouseenter", function() {
+        if (isGoodTimeToAnimation) {
+          logoAnimation($('.navbar-brand-block'));
+        }
+      });
+    }
+  </script>
+  <script>
+    var bugsnag = {"isEnabled":true,"apiKey":"dc9c1f32302ea146b714f8c1ca463d5c"}
+    window.Bugsnag.apiKey = bugsnag.apiKey;
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-38195722-3', 'auto');
+    ga('send', 'pageview');
+  
+    setTimeout(ga("send", 'event', document.location.hostname, "Spent more then 30 seconds in web application", window.location.href), 30000);
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '104123030023397');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=104123030023397&ev=PageView&noscript=1"/></noscript>
+      <!---->
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+
+        var v = $("#login-form").validate({
+          onkeyup: false,
+          onfocusout: function (element, event) {
+            if(sympliValidation) {
+              sympliValidation.timer = setTimeout(function() {
+                if($(element).valid()) {
+                  $(element).addClass('sympli-valid')
+                } else {
+                  $(element).removeClass('sympli-invalid');
+                }
+                sympliValidation.exec.call(v);
+              }, sympliValidation.timeout)
+            } else {
+              $(element).valid();
+            }
+          },
+          focusInvalid: false,
+          focusCleanup: true,
+          submitHandler: function (form) {
+            $(form).find('button[type=submit]').prop('disabled', true);
+            form.submit();
+          },
+          rules: {
+            email: {
+              required: true,
+              email: true
+            },
+            password: {
+              required: true,
+              minlength: 4
+            }
+          },
+          messages: {
+            email: {
+              required: "Email is required",
+              email: "Email is not valid"
+            },
+            password: {
+              required: "Password is required",
+              minlength: "Password must be at least 4 characters long"
+            }
+          }
+        })
+      });
+
+      function onSubmitForm() {
+        $('#login-form').submit();
+      }
+
+    </script>
+
+</body>
